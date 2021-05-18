@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,11 @@
 		04903BD22653B30700070D19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04903BBD2653B30300070D19 /* ContentView.swift */; };
 		04903BD32653B30700070D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04903BBE2653B30600070D19 /* Assets.xcassets */; };
 		04903BD42653B30700070D19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 04903BBE2653B30600070D19 /* Assets.xcassets */; };
+		04903BE42653B68D00070D19 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04903BE32653B68D00070D19 /* PokemonCell.swift */; };
+		04903BE62653BB7900070D19 /* PokedexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04903BE52653BB7900070D19 /* PokedexView.swift */; };
+		04903BE82653BEA800070D19 /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04903BE72653BEA800070D19 /* Pokemon.swift */; };
+		04903BEA2653CB4D00070D19 /* PokemonVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04903BE92653CB4D00070D19 /* PokemonVIewModel.swift */; };
+		04903BED2653D31500070D19 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 04903BEC2653D31500070D19 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,10 @@
 		04903BCB2653B30700070D19 /* PokeDex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokeDex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		04903BCD2653B30700070D19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		04903BCE2653B30700070D19 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		04903BE32653B68D00070D19 /* PokemonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
+		04903BE52653BB7900070D19 /* PokedexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexView.swift; sourceTree = "<group>"; };
+		04903BE72653BEA800070D19 /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
+		04903BE92653CB4D00070D19 /* PokemonVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonVIewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04903BED2653D31500070D19 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +67,9 @@
 		04903BBB2653B30300070D19 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				04903BDD2653B5DC00070D19 /* Model */,
+				04903BE12653B61C00070D19 /* View */,
+				04903BE02653B60E00070D19 /* ViewModel */,
 				04903BBC2653B30300070D19 /* PokeDexApp.swift */,
 				04903BBD2653B30300070D19 /* ContentView.swift */,
 				04903BBE2653B30600070D19 /* Assets.xcassets */,
@@ -90,6 +103,31 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		04903BDD2653B5DC00070D19 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				04903BE72653BEA800070D19 /* Pokemon.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		04903BE02653B60E00070D19 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				04903BE92653CB4D00070D19 /* PokemonVIewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		04903BE12653B61C00070D19 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				04903BE32653B68D00070D19 /* PokemonCell.swift */,
+				04903BE52653BB7900070D19 /* PokedexView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +144,9 @@
 			dependencies = (
 			);
 			name = "PokeDex (iOS)";
+			packageProductDependencies = (
+				04903BEC2653D31500070D19 /* Kingfisher */,
+			);
 			productName = "PokeDex (iOS)";
 			productReference = 04903BC32653B30600070D19 /* PokeDex.app */;
 			productType = "com.apple.product-type.application";
@@ -153,6 +194,9 @@
 				Base,
 			);
 			mainGroup = 04903BB62653B30200070D19;
+			packageReferences = (
+				04903BEB2653D31500070D19 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 04903BC42653B30600070D19 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -187,8 +231,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04903BEA2653CB4D00070D19 /* PokemonVIewModel.swift in Sources */,
+				04903BE82653BEA800070D19 /* Pokemon.swift in Sources */,
 				04903BD12653B30700070D19 /* ContentView.swift in Sources */,
 				04903BCF2653B30700070D19 /* PokeDexApp.swift in Sources */,
+				04903BE42653B68D00070D19 /* PokemonCell.swift in Sources */,
+				04903BE62653BB7900070D19 /* PokedexView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -439,6 +487,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		04903BEB2653D31500070D19 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.3.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		04903BEC2653D31500070D19 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 04903BEB2653D31500070D19 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04903BB72653B30200070D19 /* Project object */;
 }
